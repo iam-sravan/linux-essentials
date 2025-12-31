@@ -1,0 +1,27 @@
+USERMOD - Command used to change login user information to lock a user or disable account, this is one of important command in system administration
+Adding user to secondary group
+  #usermod –aG ‘group name’ ‘username’   -- a stands for append
+#usermod –aG wheel taylor
+Adding comment to user
+#usermod –c ‘user info’ ‘username’
+#usermod –c ‘Contract base’ taylor
+Changing user home directory 
+    by default /home is default home directory
+#usermod –d ‘new home directory path’ ‘username’
+#usermod –d /testhome taylor  
+When taylor login next time his present working directory will be /testhome
+Renaming username
+#usermod –l ‘new user name’ ‘old user name’
+#usermod –l kalyan taylor
+Changing user expiry date
+#usermod –e ‘expiry date in yyyy-mm-dd’ ‘username’
+#usermod –e 2026-03-30 kalyan
+To change it to never expire
+#usermod –e “” ‘username’
+#usermod –e “” kalyan
+#chage –l kalyan  -- expiry date should be changed to March 30 2026
+Locking and Unlocking user  
+User will login with SSH keyless authentication, only locked direct logins all pam based authentications will be successful.
+#usermod –L ‘username’
+Unlocking User
+#usermod –L ‘username’
